@@ -1,5 +1,5 @@
 import pytest
-from leetcode.twosum import two_sum_brute, two_sum_hash
+from leetcode.twosum import two_sum_brute, two_sum_hash, two_sum_index
 
 def test_two_sum_brute_import_works():
     assert two_sum_brute
@@ -68,4 +68,11 @@ def test_two_sum_hash_works_with_negative_numbers():
     target = 6
     actual = two_sum_hash(A, target)
     expected = (-1,7)
+    assert actual == expected
+
+def test_two_sum_hash_works_with_negative_numbers():
+    A = [-1, 3, 5, 4, 7, 11]
+    target = 6
+    actual = two_sum_index(A, target)
+    expected = [0,4]
     assert actual == expected
