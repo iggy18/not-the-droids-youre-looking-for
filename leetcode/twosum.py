@@ -7,8 +7,10 @@ def two_sum_brute(arr, tar):
                 return (arr[first_num], arr[second_num])
     return False
 
+
 # time complexity of O(n)
 # space complexity of O(n)
+# get values
 def two_sum_hash(arr, tar):
     hash_table = dict()
     for i in range(len(arr)):
@@ -17,3 +19,12 @@ def two_sum_hash(arr, tar):
         else:
             hash_table[tar - arr[i]] = arr[i]
     return False
+
+# get indices
+def two_sum_index(nums, target):
+    hash_table = dict()
+    for i in range(len(nums)):
+        if target - nums[i] in hash_table:
+            return [hash_table[target - nums[i]],i]
+        else:
+            hash_table[nums[i]]=i
