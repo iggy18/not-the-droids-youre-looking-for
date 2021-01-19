@@ -13,15 +13,15 @@ class BinaryTree:
         # traversals are walking around and doing stuff.
         node_values = []
 
-        def walk_around(node):
-            # if there is no node return
-            if not node:
+        def walk_around(root):
+            # if there is no root return
+            if not root:
                 return
             # DO A THING
-            node_values.append(node.value)
+            node_values.append(root.value)
             # WALK AROUND
-            walk_around(node.left)
-            walk_around(node.right)
+            walk_around(root.left)
+            walk_around(root.right)
         # calls recursive function
         walk_around(self.root)
 
